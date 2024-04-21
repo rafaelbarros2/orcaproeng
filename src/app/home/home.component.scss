@@ -1,0 +1,25 @@
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.collapsedMenu {
+  width: 5rem; /* Largura da sidebar quando recolhida */
+  overflow-x: hidden; /* Para ocultar o conteúdo extra quando recolhida */
+}
+
+.sidebar-toggle-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar-icon {
+  margin-right: 10px; /* Adicione margem direita para espaçamento */
+}
+
+.collapsed .sidebar-icon + .d-none {
+  display: none!important; /* Oculta o texto associado ao ícone quando a barra lateral estiver recolhida */
+}
+
+.collapsedOrder {
+    display: none !important;
+}

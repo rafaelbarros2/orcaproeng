@@ -1,0 +1,38 @@
+::ng-deep .p-fieldset-legend {
+  width: 47%;
+  margin-left: 26%;
+}
+
+::ng-deep .p-dropdown-label{
+  height: 1rem;
+  text-align: start;
+  align-content: center;
+  min-width: 8rem;
+}
+
+::ng-deep .p-dropdown-items{
+  padding-left: 0;
+}
+
+
+::ng-deep .p-dropdown-empty-message{
+  height: 1rem;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+}
+
+.radio-container input[type="radio"] {
+  margin-right: 8px; /* Ajuste conforme necessário */
+}
+
+
+.col-2{
+  margin-right: 0.75rem;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 17.666667%;
+  justify-content: center;
+}

@@ -1,0 +1,157 @@
+<!-- menu.component.html -->
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark"
+      [ngClass]="{ collapsedMenu: isSidebarCollapsed }"
+    >
+      <div
+        class="d-flex justify-content-end"
+        [ngClass]="{ 'justify-content-center': isSidebarCollapsed }"
+      >
+        <button
+          class="btn btn-primary btn-sm mb-2 sidebar-toggle-button"
+          (click)="toggleSidebar()"
+        >
+          <i class="bi bi-list-task"></i>
+        </button>
+      </div>
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+      >
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a routerLink="#" class="nav-link align-middle px-0">
+              <i class="fs-4 bi-house sidebar-icon"></i>
+              <span *ngIf="!isSidebarCollapsed" class="d-none d-sm-inline"
+                >Home</span
+              >
+            </a>
+          </li>
+          <li>
+            <a
+              href="#submenu1"
+              data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle"
+            >
+              <i class="fs-4 bi-calculator"></i>
+              <span *ngIf="!isSidebarCollapsed" class="ms-1 d-none d-sm-inline"
+                >Orçamento</span
+              >
+            </a>
+
+            <ul
+              class="collapse show nav flex-column ms-1"
+              id="submenu1"
+              data-bs-parent="#menu"
+            >
+              <li class="w-100">
+                <a routerLink="/config-orcamento" style="cursor: pointer;" class="nav-link px-0">
+                  <span class="d-none d-sm-inline">Novo Orçamento</span> 1
+                </a>
+              </li>
+              <li>
+                <a routerLink="#" class="nav-link px-0">
+                  <span class="d-none d-sm-inline">Lista de orçamentos</span> 2
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a routerLink="#" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-table"></i>
+              <span
+                [ngClass]="{ collapsedOrder: isSidebarCollapsed }"
+                class="ms-1 d-none d-sm-inline"
+                >Orders</span
+              ></a
+            >
+          </li>
+          <li>
+            <a
+              href="#submenu2"
+              data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle"
+            >
+              <i class="fs-4 bi-bootstrap"></i>
+              <span *ngIf="!isSidebarCollapsed" class="ms-1 d-none d-sm-inline"
+                >Bootstrap</span
+              ></a
+            >
+            <ul
+              class="collapse nav flex-column ms-1"
+              id="submenu2"
+              data-bs-parent="#menu"
+            >
+              <li class="w-100">
+                <a routerLink="#" class="nav-link px-0">
+                  <span class="d-none d-sm-inline">Item</span> 1</a
+                >
+              </li>
+              <li>
+                <a routerLink="#" class="nav-link px-0">
+                  <span class="d-none d-sm-inline">Item</span> 2</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#submenu3"
+              data-bs-toggle="collapse"
+              class="nav-link px-0 align-middle"
+            >
+              <i class="fs-4 bi-grid"></i>
+              <span *ngIf="!isSidebarCollapsed" class="ms-1 d-none d-sm-inline"
+                >Products</span
+              >
+            </a>
+            <ul
+              class="collapse nav flex-column ms-1"
+              id="submenu3"
+              data-bs-parent="#menu"
+            >
+              <li class="w-100" data-bs-parent="#menu" style="cursor: pointer">
+                <a routerLink="#" class="nav-link px-0">
+                  <span class="d-none d-sm-inline">Product</span> 1</a
+                >
+              </li>
+
+              <li>
+                <a routerLink="#" class="nav-link px-0">
+                  <span class="d-none d-sm-inline">Product</span> 2</a
+                >
+              </li>
+              <li>
+                <a routerLink="#" class="nav-link px-0">
+                  <span class="d-none d-sm-inline">Product</span> 3</a
+                >
+              </li>
+              <li>
+                <a routerLink="#" class="nav-link px-0">
+                  <span class="d-none d-sm-inline">Product</span> 4</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a routerLink="#" class="nav-link px-0 align-middle">
+              <i class="fs-4 bi-people"></i>
+              <span *ngIf="!isSidebarCollapsed" class="ms-1 d-none d-sm-inline"
+                >Customers</span
+              >
+            </a>
+          </li>
+        </ul>
+        <hr />
+      </div>
+    </div>
+    <div class="col py-3" style="max-width: 80%; justify-content: center;">
+      <router-outlet></router-outlet>
+      <!-- Content area -->
+    </div>
+  </div>
+</div>

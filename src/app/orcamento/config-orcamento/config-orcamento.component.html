@@ -1,0 +1,71 @@
+<form [formGroup]="formGroup">
+<p-fieldset >
+  <ng-template pTemplate="header" >
+    <div class="flex align-items-center gap-2 px-2" style="justify-content: center;display: flex;">
+      <span class="font-bold">Configuração inicial do orçamento</span>
+    </div>
+  </ng-template>
+
+  <div class="row">
+    <p-floatLabel>
+      <input class="form-control" id="codigo" type="text" pInputText formControlName="codigo" />
+      <label for="codigo">Código</label>
+    </p-floatLabel>
+    <br>
+    <br>
+    <br>
+    <p-floatLabel>
+      <input class="form-control" id="descricao" type="text" pInputText formControlName="descricao" />
+      <label for="descricao">Descrição</label>
+    </p-floatLabel>
+  </div>
+
+  <div style="margin-top: 1rem;" class="col-md-12 row">
+    <div class="col-md-3">
+      <label style="margin-right: 0.75rem;" for="auto">Auto itemização</label>
+      <p-checkbox formControlName="auto" value="auto" inputId="auto"></p-checkbox>
+    </div>
+    <div class="col-md-4">
+      <label style="margin-right: 0.75rem;" for="encargos">Encargos sociais desonerado</label>
+      <p-checkbox formControlName="encargos" value="encargos" inputId="encargos"></p-checkbox>
+    </div>
+    <div class="col-md-5">
+      <label style="margin-right: 0.75rem;" for="permitir">Permitir insumos com preço zerado no orçamento</label>
+      <p-checkbox formControlName="permitir" value="permitir" inputId="permitir"></p-checkbox>
+    </div>
+  </div>
+
+  <div style=" margin-top: 2rem;" class="col-md-12 row">
+    <div class="col-md-3 justify-content-center">
+      <span class="p-float-label">
+        <p-dropdown  placeholder="Estados" optionLabel="name" formControlName="estado" inputId="estados"></p-dropdown>
+        <label for="estados">Estados</label>
+      </span>
+    </div>
+
+    <div class="col-md-3 justify-content-center">
+      <span class="p-float-label">
+        <p-dropdown  placeholder="Data SINAPI" optionLabel="name" formControlName="dataSinapi" inputId="data-sinapi"></p-dropdown>
+        <label for="data-sinapi">Data SINAPI</label>
+      </span>
+    </div>
+    <div class="col-md-6 justify-content-center">
+      <span class="p-float-label">
+        <p-dropdown  placeholder="Cliente (Opcional)" optionLabel="name" formControlName="cliente" inputId="cliente"></p-dropdown>
+        <label for="cliente">Cliente (Opcional)</label>
+      </span>
+    </div>
+  </div>
+    <div class="col-md-12 row" style="margin-top: 2rem;">
+      <label class="col-2 " >Opções de arredondamento: </label>
+      <div class="card flex justify-content-centerflex-column gap-3 " style="width: 37rem;right: 2%;">
+        <div *ngFor="let category of categories" class="field-checkbox">
+          <div class="radio-container" style="justify-content:flex-start">
+            <input type="radio" [id]="category.key" [name]="'selectedCategoryControl'" [value]="category" formControlName="selectedCategoryControl">
+            <label style="margin-right: 0.75rem;"  [for]="category.key">{{ category.name }}</label>
+          </div>
+        </div>
+      </div>
+  </div>
+</p-fieldset>
+</form>
