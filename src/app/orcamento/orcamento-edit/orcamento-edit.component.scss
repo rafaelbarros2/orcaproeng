@@ -1,0 +1,119 @@
+
+$color-dark: #a53125;
+$speed: "0.25s";
+$transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
+
+/* Main Styles */
+.button {
+  display: block;
+  background-color:  #00a0a0;
+  width: 5rem;
+  height: 2rem;
+  line-height: 2rem;
+  margin: auto;
+  color: #fff;
+  position: absolute;
+  cursor: pointer;
+  overflow: hidden;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  transition: $transition;
+
+  span,
+  .icon {
+    display: block;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+  }
+
+  span {
+    width: 78%;
+    line-height: inherit;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    left: 0;
+    transition: $transition;
+
+    &:after {
+      content: "";
+      background-color: $color-dark;
+      width: 2px;
+      height: 70%;
+      position: absolute;
+      top: 15%;
+      right: -1px;
+    }
+  }
+
+  .icon {
+    width: 28%;
+    right: 0;
+    transition: $transition;
+
+    .pi {
+      height: 19px;
+      left: 0.2rem;
+      position: relative;
+      vertical-align: middle;
+      transition: $transition, height #{$speed} ease;
+    }
+
+    .pi-plus {
+      font-size: 14px;;
+    }
+  }
+
+  &.success,
+  &:hover {
+    span {
+      left: -72%;
+      opacity: 0;
+    }
+
+    .icon {
+      width: 100%;
+
+      .pi {
+        font-size:20px;
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 0.9;
+
+    .icon .pi-plus {
+      height: 25px;
+    }
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+::ng-deep .p-dropdown-label{
+  height: 1rem;
+  text-align: start;
+  align-content: center;
+  min-width: 8rem;
+}
+
+::ng-deep .p-dropdown-items{
+  padding-left: 0;
+}
+
+
+::ng-deep .p-dropdown-empty-message{
+  height: 1rem;
+}
+
+.button-composicao{
+  background-color: #228B22;
+  margin-left: 5.5rem;
+  z-index: 1;
+  width: 6.5rem;
+}

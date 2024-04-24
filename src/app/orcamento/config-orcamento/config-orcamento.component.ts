@@ -6,7 +6,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
-import { ReactiveFormsModule, FormsModule, FormGroup,FormBuilder } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup,FormBuilder,Validators  } from '@angular/forms';
 
 
 @Component({
@@ -34,13 +34,13 @@ export class ConfigOrcamentoComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      codigo: [''], // Adicione valores padrão ou vazios, conforme necessário
-      descricao: [''],
-      auto: [false], // Adicione valores padrão ou vazios, conforme necessário
-      city: [false], // Adicione valores padrão ou vazios, conforme necessário
-      permitir: [false], // Adicione valores padrão ou vazios, conforme necessário
-      estado: [''],
-      dataSinapi: [''],
+      codigo: ['', Validators.required], // Código obrigatório
+      descricao: ['', Validators.required], // Descrição obrigatória
+      auto: [false],
+      city: [false],
+      permitir: [false],
+      estado: ['', Validators.required], // Estado obrigatório
+      dataSinapi: ['', Validators.required], // Data SINAPI obrigatória
       cliente: [''],
       selectedCategoryControl: '',
       encargos: [false]

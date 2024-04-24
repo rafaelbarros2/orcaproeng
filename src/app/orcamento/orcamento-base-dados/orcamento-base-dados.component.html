@@ -1,0 +1,42 @@
+<p-fieldset >
+  <ng-template pTemplate="header" >
+    <div class="flex align-items-center gap-2 px-2" style="justify-content: center;display: flex;">
+      <span class="font-bold">Base de dados nacionais</span>
+    </div>
+  </ng-template>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Data base</th>
+      <th scope="col">UF</th>
+      <th scope="col">Data referência</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of baseDadosOrcamentoList; let i = index">
+      <tr>
+        <th scope="row">{{i + 1}}</th>
+        <td>{{item.nome}}</td>
+        <td class="col-md-4">
+          <span class="p-float-label">
+            <p-dropdown  [options]="estados" optionLabel="uf" [(ngModel)]="item.estado" inputId="estados_{{i}}">
+            </p-dropdown>
+            <label for="estados_{{i}}">Estados</label>
+          </span>
+        </td>
+        <td>
+          <span class="p-float-label">
+            <p-dropdown  [options]="estados" optionLabel="uf" [(ngModel)]="item.estado" inputId="estados_{{i}}">
+            </p-dropdown>
+            <label for="estados_{{i}}">Estados</label>
+          </span>
+        </td>
+      </tr>
+      <tr *ngIf="i === 0">
+        <td colspan="4" style="text-align: center; font-weight: bold;">PAGA MAIS 700 PARA O PAE E TENHA AS OUTRAS BASES.</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+</p-fieldset>

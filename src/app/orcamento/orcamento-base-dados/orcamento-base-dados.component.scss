@@ -1,0 +1,15 @@
+::ng-deep .p-dropdown-label{
+  height: 1rem;
+  text-align: start;
+  align-content: center;
+  min-width: 8rem;
+}
+
+::ng-deep .p-dropdown-items{
+  padding-left: 0;
+}
+
+
+::ng-deep .p-dropdown-empty-message{
+  height: 1rem;
+}

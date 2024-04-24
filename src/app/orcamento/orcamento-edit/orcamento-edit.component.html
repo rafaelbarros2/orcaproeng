@@ -1,0 +1,64 @@
+<p-fieldset>
+  <ng-template pTemplate="header">
+    <div class="flex align-items-center gap-2 px-2" style="justify-content: center;display: flex;">
+      <span class="font-bold">Base de dados nacionais</span>
+    </div>
+  </ng-template>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Data base</th>
+        <th scope="col">UF</th>
+        <th scope="col">Data referência</th>
+        <th scope="col">Ações</th><!-- Adicionando uma coluna para as ações -->
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of baseDadosOrcamentoList; let i = index">
+        <tr (mouseover)="showButton(i)" (mouseleave)="hideButton(i)">
+          <th scope="row">{{i + 1}}</th>
+          <td>
+            <div class="col-md-12">
+            {{item.nome}}
+          </div>
+           <!-- <button class="btn btn-primary" *ngIf="isButtonVisible[i]" (click)="adicionar()">Adicionar</button>-->
+           <a  class="button"  role="button">
+            <span>Etapa</span>
+            <div class="icon">
+              <i class="pi pi-plus"></i>
+            </div>
+          </a>
+          <a class="button button-composicao"  role="button">
+            <span>Composição</span>
+            <div class="icon">
+              <i class="pi pi-plus"></i>
+            </div>
+          </a>
+          </td>
+
+          <td class="col-md-4">
+            <span class="p-float-label">
+              <p-dropdown [options]="estados" optionLabel="uf" [(ngModel)]="item.estado"
+                inputId="estados_{{i}}">
+              </p-dropdown>
+              <label for="estados_{{i}}">Estados</label>
+            </span>
+          </td>
+          <td>
+            <span class="p-float-label">
+              <p-dropdown [options]="estados" optionLabel="uf" [(ngModel)]="item.estado"
+                inputId="estados_{{i}}">
+              </p-dropdown>
+              <label for="estados_{{i}}">Estados</label>
+            </span>
+          </td>
+          <td>
+            <!-- Botão de adicionar -->
+
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</p-fieldset>
