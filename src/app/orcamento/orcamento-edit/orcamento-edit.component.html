@@ -1,7 +1,7 @@
 <p-fieldset>
   <ng-template pTemplate="header">
     <div class="flex align-items-center gap-2 px-2" style="justify-content: center;display: flex;">
-      <span class="font-bold">Base de dados nacionais</span>
+      <span class="font-bold">Orçamento</span>
     </div>
   </ng-template>
   <table class="table table-striped">
@@ -23,27 +23,58 @@
             {{item.nome}}
           </div>
            <!-- <button class="btn btn-primary" *ngIf="isButtonVisible[i]" (click)="adicionar()">Adicionar</button>-->
-           <a  class="button"  role="button">
-            <span>Etapa</span>
-            <div class="icon">
-              <i class="pi pi-plus"></i>
-            </div>
-          </a>
-          <a class="button button-composicao"  role="button">
-            <span>Composição</span>
-            <div class="icon">
-              <i class="pi pi-plus"></i>
-            </div>
-          </a>
+           <div class="row">
+            <a  class="button" style="background-color:  #00a0a0;"  role="button">
+              <span>Etapa</span>
+              <div class="icon">
+                <i class="pi pi-plus"></i>
+              </div>
+            </a>
+            <a class="button button-composicao"  role="button">
+              <span>Composição</span>
+              <div class="icon">
+                <i class="pi pi-plus"></i>
+              </div>
+            </a>
+            <a class=" button  button-insumo btn btn-primary"  role="button">
+              <span>Insumo</span>
+              <div class="icon">
+                <i class="pi pi-plus"></i>
+              </div>
+            </a>
+           </div>
+
+
           </td>
 
-          <td class="col-md-4">
-            <span class="p-float-label">
+          <td >
+            <span class="p-float-label col-md-12 ">
               <p-dropdown [options]="estados" optionLabel="uf" [(ngModel)]="item.estado"
                 inputId="estados_{{i}}">
               </p-dropdown>
               <label for="estados_{{i}}">Estados</label>
             </span>
+            <div class="row" style="padding-left: 0.5rem; bottom: 0.5rem; position: relative;">
+              <a class=" button  button-editar btn btn-secondary"  role="button">
+                <span>Editar</span>
+                <div class="icon">
+                  <i class="pi pi-plus"></i>
+                </div>
+              </a>
+              <a class=" button  button-bdi btn btn-dark"  role="button">
+                <span>%BDI</span>
+                <div class="icon">
+                  <i class="pi pi-plus"></i>
+                </div>
+              </a>
+              <a class=" button  button-excluir btn btn-danger"  role="button">
+                <span>Excluir</span>
+                <div class="icon">
+                  <i class="pi pi-plus"></i>
+                </div>
+              </a>
+            </div>
+
           </td>
           <td>
             <span class="p-float-label">

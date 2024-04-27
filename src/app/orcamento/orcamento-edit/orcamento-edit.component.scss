@@ -6,7 +6,6 @@ $transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 /* Main Styles */
 .button {
   display: block;
-  background-color:  #00a0a0;
   width: 5rem;
   height: 2rem;
   line-height: 2rem;
@@ -30,7 +29,7 @@ $transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   }
 
   span {
-    width: 78%;
+    width: 76%;
     line-height: inherit;
     font-size: 10.5px;
     text-transform: uppercase;
@@ -50,7 +49,7 @@ $transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
 
   .icon {
     width: 28%;
-    right: 0;
+    right: 1px;
     transition: $transition;
 
     .pi {
@@ -117,3 +116,28 @@ $transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   z-index: 1;
   width: 6.5rem;
 }
+
+.button-insumo{
+  margin-left: 12.5rem;
+  z-index: 1;
+  width: 6.5rem;
+}
+
+.button-editar{
+  margin-left: 5.5rem;
+  z-index: 1;
+  width: 6.5rem;
+}
+
+.button-bdi{
+  margin-left: 12.5rem;
+  z-index: 1;
+  width: 6.5rem;
+}
+
+.button-excluir{
+  margin-left:19.5rem;
+  z-index: 1;
+  width: 6.5rem;
+}
+
